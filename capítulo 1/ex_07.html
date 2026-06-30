@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex_08.html</title>
+</head>
+<body>
+    Digite sua idade:
+    <input type="text" id="idade_input"><br><br>
+    <button onclick="homem()">Aposentadoria Homem</button>
+    <button onclick="mulher()">Aposentadoria Mulher</button>
+</body>
+</html>
+<script>
+    function homem(){
+        let idade = Number(idade_input.value);
+        alert(`Faltam ${70 - idade} anos para você se aposentar`);
+    }
+    function mulher(){
+        let idade = Number(idade_input.value);
+        alert(`Faltam ${60 - idade} anos para você se aposentar`);
+    }
+</script>

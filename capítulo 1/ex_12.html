@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    Digite seu peso:
+    <input type="text" id="peso_input"><br><br>
+    Digite sua altura:
+    <input type="text" id="altura_input"><br><br>
+    <button onclick="cadastrar()">Calcular IMC</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function cadastrar(){
+        let peso = Number(peso_input.value);
+        let altura = Number(altura_input.value);
+        let imc = (peso / altura ** 2);
+        mensagem.innerHTML = `${imc.toFixed(1)} é o seu IMC`
+    }
+</script>

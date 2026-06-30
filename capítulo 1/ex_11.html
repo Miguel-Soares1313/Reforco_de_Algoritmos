@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    Digite o primeiro valor:
+    <input type="text" id="valor_um_input"><br><br>
+    Digite o segundo valor:
+    <input type="text" id="valor_dois_input"><br><br>
+
+    <button onclick="somar()">Somar</button><br>
+    <div id="mensagem_um"></div><br>
+
+    <button onclick="subtrair()">Subtrair</button><br>
+    <div id="mensagem_dois"></div><br>
+    <button onclick="multiplicar()">Multiplicar</button><br>
+    <div id="mensagem_tres"></div><br>
+
+    <button onclick="dividir()">Dividr</button><br>
+    <div id="mensagem_quatro"></div><br>
+
+</body> 
+</html>
+<script>
+    function somar(){
+        let valor_um = Number(valor_um_input.value);
+        let valor_dois = Number(valor_dois_input.value);
+        mensagem_um.innerHTML = `A soma entre ${valor_um} e ${valor_dois} é ${valor_um + valor_dois}`
+    }
+    function subtrair(){
+        let valor_um = Number(valor_um_input.value);
+        let valor_dois = Number(valor_dois_input.value);
+        mensagem_dois.innerHTML = `A diferença entre ${valor_um} e ${valor_dois} é ${valor_um - valor_dois}`
+    }
+     function multiplicar(){
+        let valor_um = Number(valor_um_input.value);
+        let valor_dois = Number(valor_dois_input.value);
+        mensagem_tres.innerHTML = `O produto entre ${valor_um} e ${valor_dois} é ${valor_um * valor_dois}`
+    }
+     function dividir(){
+        let valor_um = Number(valor_um_input.value);
+        let valor_dois = Number(valor_dois_input.value);
+        mensagem_quatro.innerHTML = `A razão ${valor_um} e ${valor_dois} é ${valor_um / valor_dois}`
+    }
+</script>

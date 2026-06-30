@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    Digite seu peso:
+    <input type="text" id="peso_input"><br><br>
+    Digite sua altura:
+    <input type="text" id="altura_input"><br><br>
+    <button onclick="cadastrar()">Fale comigo</button>
+</body>
+</html>
+<script>
+    function cadastrar(){
+        let peso = (peso_input.value);
+        let altura = (altura_input.value);
+        alert(`Você pesa ${peso}kg e tem ${altura}m de altura`)
+    }
+</script>

@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    Qual o nome do guerreiro?
+    <input type="text" id="nome_input"><br><br>
+    Qual o ki normal do guerreiro?
+    <input type="text" id="ki_input"><br><br>
+    <button onclick="calcular()">Ver ki em cada forma</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        let nome = (nome_input.value);
+        let ki = Number(ki_input.value);
+        alert(`O guerreiro ${nome} possuí um ki de ${ki} em sua forma base`);
+        alert(`O guerreiro ${nome} possuí um ki de ${ki * 50} em sua forma Super Sayajin`);
+        alert(`O guerreiro ${nome} possuí um ki de ${ki * 100} em sua forma Super Sayajin 2`);
+    }
+</script>

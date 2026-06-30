@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos votos o candidato A teve?
+    <input type="text" id="votos_a"><br><br>
+    Quantos votos o candidato B teve?
+    <input type="text" id="votos_b"><br><br>
+    Quantos votos em braco teve?
+    <input type="text" id="votos_branco"><br><br>
+    Quantos votos em nulo teve?
+    <input type="text" id="votos_nulo"><br><br>
+    <button onclick="calcular()">Resultado da Eleção</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        let votos_candidato_a = Number(votos_a.value);
+        let votos_candidato_b = Number(votos_b.value);
+        let votos_em_branco = Number(votos_branco.value);
+        let votos_em_nulo = Number(votos_nulo.value);
+        let invalidos = Number(votos_em_branco + votos_em_nulo);
+        let total = Number(votos_candidato_a + votos_candidato_b + invalidos);
+
+        mensagem.innerHTML = `Total de votos: ${total}<br>
+                              Candidato A: ${votos_candidato_a / total * 100}% (${votos_candidato_a} votos)<br>
+                              Candidato B: ${votos_candidato_b / total * 100}% (${votos_candidato_b} votos)<br>
+                              Inválidos: ${invalidos / total * 100}% (${invalidos} votos)`
+    }
+</script>

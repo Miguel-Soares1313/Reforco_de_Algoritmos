@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <button onclick="pare()">Pare</button><br><br>    
+    <button onclick="pense()">Pense</button><br><br>
+    <button onclick="siga()">Siga</button><br><br>
+    <div id="mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function pare(){
+        mensagem.innerHTML = `<h1 style = "color:red; background:black;">Pare e aguarde!</h1>`
+    }
+
+     function pense(){
+        mensagem.innerHTML = `<h1 style = "color:yellow; background:black;">Pense se pode seguir ou se deve parar!</h1>`
+    }
+
+     function siga(){
+        mensagem.innerHTML = `<h1 style = "color:green; background:black;">Pode seguir adiante!</h1>`
+    }
+</script>

@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    Insira sua nota:
+    <input type="text" id="nota_input"><br><br>
+    <button onclick="opn_avo()">opinião da avó</button> 
+    <button onclick="opn_mae()">opinião da mãe</button> 
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function opn_avo(){
+        let nota = (nota_input.value);
+        mensagem.innerHTML = `Muito bem, que neto inteligente, porque tirou ${nota}`
+    }
+
+    function opn_mae(){
+        let nota = (nota_input.value);
+        mensagem.innerHTML = `Não fez mais que tua obrigação com essa nota ${nota}`
+    }
+</script>

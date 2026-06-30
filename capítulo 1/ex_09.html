@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    Qual o valor da passagem?
+    <input type="text" id="valor_input"><br><br>
+    Quantas viagens por mês?
+    <input type="text" id="viagem_input"><br><br>
+    <button onclick="calcular()">Ver economia</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        let valor = Number(valor_input.value);
+        let viagens = Number(viagem_input.value);
+        alert(`Você economizará R$${valor * viagens / 2} por mês`)
+    }
+</script>

@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <button onclick="receber()">Receber 100</button>
+    <button onclick="pagar()">Pagar 50</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    let saldo = 0;
+
+    function receber(){
+        saldo += 100;
+        mensagem.innerHTML = `Transferência de R$100 recebida!<br>
+        Saldo atual: R$${saldo}`
+    }
+    function pagar(){
+        if(saldo == 0){
+            mensagem.innerHTML = `Você não possuí saldo!`
+        }
+        else{
+        saldo -= 50;
+        mensagem.innerHTML = `Pagamento de R$50 efetuado!<br>
+        Saldo atual: R$${saldo}`
+        }
+    }
+</script>

@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    Digite seu time:
+    <input type="text" id="time_input"><br><br>
+    Digite quantos títulos o seu time tem:
+    <input type="text" id="titulo_input"><br><br>
+    <button onclick="cadastrar()">Amo meu time</button>
+</body>
+</html>
+<script>
+    function cadastrar(){
+        let time = (time_input.value);
+        let titulos = (titulo_input.value);
+        alert(`O time ${time} tem ${titulos} títulos`)
+    }
+</script>
