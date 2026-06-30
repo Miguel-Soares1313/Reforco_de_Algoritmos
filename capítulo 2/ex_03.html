@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    Qual o valor da nota 1? <br>
+    <input type="text" id="nota_um_input"><br><br>
+    Qual o valor da nota 2? <br>
+    <input type="text" id="nota_dois_input"><br><br>
+    Qual o valor da nota 3? <br>
+    <input type="text" id="nota_tres_input"><br><br>
+
+    <button onclick="analisar()">Analisar desempenho</button><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let primeira_nota = Number(nota_um_input.value)
+        let segunda_nota = Number(nota_dois_input.value)
+        let terceira_nota = Number(nota_tres_input.value)
+        let total = Number(primeira_nota + segunda_nota + terceira_nota);
+        let media = Number(total / 3)
+        if(media > 9.4){
+            mensagem.innerHTML = `Sua média foi de ${media.toFixed(1)}. Parabéns, você é fora de série!`
+        }
+        else{
+            mensagem.innerHTML = `Sua média foi de ${media.toFixed(1)}`
+        }
+    }
+</script>

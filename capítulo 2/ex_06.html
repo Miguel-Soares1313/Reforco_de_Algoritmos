@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    Digite o saldo:
+    <input type="text" id="saldo_input"><br><br>
+    Digite o débito:
+    <input type="text" id="debito_input"><br><br>
+    <button onclick="analisar()">Analisar conta</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let saldo = Number(saldo_input.value);
+        let debito = Number(debito_input.value);
+        let resultado = Number(saldo - debito);
+        if(resultado < 0){
+            mensagem.innerHTML = `<p style= "color:red"><b>O saldo atual da conta corrente é R$${resultado}</b></p>`
+        }
+        else{
+            mensagem.innerHTML = `O saldo atual da conta corrente é R$${resultado}`
+        }
+    }
+</script>
