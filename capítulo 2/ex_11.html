@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    Qual a frequência do aluno?
+    <input type="text" id="frequencia_input"><br><br>
+    <button onclick="analisar()">Analisar frequência</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let frequencia = Number(frequencia_input.value);
+
+        if(frequencia < 50){
+            mensagem.innerHTML = `Aluno turista!<br>
+            <img src="https://imgs.search.brave.com/FVsAeoebgx0bGdFTfaadZruu0HaiQ1kBttfMnzacAPY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L3Bhci1kZS10dXJp/c3Rhcy1vbGhhbmRv/LXBhcmEtby1tYXBh/XzIzLTIxNDc2NDEx/NzYuanBnP3NlbXQ9/YWlzX2luY29taW5n/Jnc9NzQwJnE9ODA">`
+        }
+        else{
+            mensagem.innerHTML = `Aluno estudioso!<br>
+            <img src="https://imgs.search.brave.com/Fv7t35fBlp3pHEupzccksdR3sTmqalmaEHX6L4VB-ck/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI3/MTE4NzUxNS9wdC9m/b3RvL211bHRpLWV0/aG5pYy1oaWdoLXNj/aG9vbC1zdHVkZW50/cy1oYW5naW5nLW91/dC1pbi1oYWxsd2F5/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1hODdLT2dYY1pv/NUNMMjlvUTIwdTU1/TXRyZ29ZV2FwR0Z0/NF9TdzdoRWRRPQ">`
+        }
+    }
+</script>

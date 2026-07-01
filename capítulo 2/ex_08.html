@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    Qual sua série favorita?
+    <input type="text" id="serie_input"><br><br>
+    Quantos episódios você já assistiu?
+    <input type="text" id="episodios_input"><br><br>
+    <button onclick="verificar()">Verificar nível</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        let serie = serie_input.value;
+        let qtd_episodios = Number(episodios_input.value);
+        let tempo = (qtd_episodios * 22 / 60);
+        if(tempo > 30){
+            mensagem.innerHTML = `Vejo que você gosta da série ${serie}. Uau, você realmente gosta dessa série!`
+        }
+        else{
+            mensagem.innerHTML = `Vejo que você gosta da série ${serie}`
+        }
+        
+    }
+</script>

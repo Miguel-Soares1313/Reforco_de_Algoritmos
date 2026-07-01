@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    Quantos chocolates foram comprados?
+    <input type="text" id="chocolate_input"><br><br>
+    <button onclick="analisar()">Compra</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let chocolates = Number(chocolate_input.value);
+
+        if(chocolates > 12){
+            mensagem.innerHTML = `o valor da sua compra foi de ${chocolates * 2.50}`
+        }
+        else{
+            mensagem.innerHTML = `o valor da sua compra foi de ${chocolates * 3}`
+        }
+    }
+</script>

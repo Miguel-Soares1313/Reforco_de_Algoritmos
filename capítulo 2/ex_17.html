@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body>
+    Qual a nota do aluno?
+    <input type="text" id="nota_input"><br><br>
+    <button onclick="classificar()">Classificar aluno</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function classificar(){
+        let nota = Number(nota_input.value);
+        if(nota < 5){
+            mensagem.innerHTML= `Aluno precisa de muita ajuda`
+        }
+        else if(nota <= 7){
+            mensagem.innerHTML= `Aluno na média`
+        }
+        else if(nota <= 9.5){
+            mensagem.innerHTML= `Aluno na acima da média`
+        }
+        else{
+            mensagem.innerHTML= `Aluno fora da curva`
+        }
+    }
+</script>
