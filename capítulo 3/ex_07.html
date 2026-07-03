@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    Quantas passagens você quer adquirir?
+    <input type="text" id="passagens_input"><br><br>
+    <button onclick="verificar()">Comprar</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        let quantidade = Number(passagens_input.value);
+        let valor_passagem = 4.40;
+        let valor_total = (quantidade * valor_passagem);
+
+        if(quantidade < 8 || quantidade > 50){
+            alert(`Quantidade inválida para o Fidelidade!`)
+        }
+        else{
+            if(quantidade >= 8 && quantidade <= 19){
+                mensagem.innerHTML = `Total a pagar: R$${(valor_total - (valor_total * 0.03)).toFixed(2)}`
+            }
+            else if(quantidade >= 20 && quantidade <= 49){
+                mensagem.innerHTML = `Total a pagar: R$${(valor_total - (valor_total * 0.05)).toFixed(2)}`
+            }
+            else{
+                mensagem.innerHTML = `Total a pagar: R$${(valor_total - (valor_total * 0.07)).toFixed(2)}`
+            }
+        }
+    }
+</script>

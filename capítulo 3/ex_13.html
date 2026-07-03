@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    Qual seu login?
+    <input type="text" id="login_input"><br><br>
+    Qual sua senha?
+    <input type="text" id="senha_input"><br><br>
+    Qual sua informação pessoal?
+    <input type="text" id="info_input"><br><br>
+    <button onclick="verificar()">Autenticar</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        let login = login_input.value;
+        let senha = senha_input.value;
+        let informacao_pessoal = info_input.value;
+        if(login == "ana" && senha == "braga" && informacao_pessoal == "1949" || informacao_pessoal == "louro josé"){
+            mensagem.innerHTML = `Usuário autenticado`
+        }
+        else{
+            mensagem.innerHTML = `Falha na autenticação`
+        }
+    }
+</script>

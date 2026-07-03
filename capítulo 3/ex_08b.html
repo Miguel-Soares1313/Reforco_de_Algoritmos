@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    Qual sua nota do ENEM?
+    <input type="text" id="enem_input"><br><br>
+    Qual sua nota do Vestibular?
+    <input type="text" id="vestibular_input"><br><br>
+    <button onclick="avaliar()">Avaliação</button>
+</body>
+</html>
+<script>
+    function avaliar(){
+        let nota_enem = Number(enem_input.value);
+        let nota_vestibular = Number(vestibular_input.value);
+        if(nota_enem >= 800 || nota_vestibular >= 700){
+            alert(`Parabéns! Aprovado`)
+        }
+        else{
+            alert(`Tente semestre que vem!`)
+        }
+    }
+</script>
