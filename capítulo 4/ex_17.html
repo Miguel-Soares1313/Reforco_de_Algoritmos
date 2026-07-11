@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 17</title>
+</head>
+<body>
+    Quantos depósitos você fez?
+    <input type="text" id="depositos_input"><br><br>
+    Qual o valor de cada depósito?
+    <input type="text" id="valor_input"><br><br>
+    <button onclick="acompanhar()">Acompanhar grana</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function acompanhar(){
+        let quantidade = Number(depositos_input.value);
+        let valor = Number(valor_input.value);
+        mensagem.innerHTML = ``
+        for (let i = 1; i <= quantidade; i++) {
+            mensagem.innerHTML += `${i}º Mês: R$ ${valor * i}<br>`
+        }
+    }
+</script>

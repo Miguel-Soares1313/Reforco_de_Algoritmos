@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20</title>
+</head>
+
+<body>
+    Qual sua idade?
+    <input type="text" id="idade_input" oninput="analisar()"><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        let idade = Number(idade_input.value);
+        let resposta = ``
+        for (let i = 0; i <= idade; i++) {
+            if (i >= 0 && i < 5) {
+                resposta += `${i} anos (Primeira Infância)<br>`
+            }
+            else if (i >= 5 && i < 7) {
+                resposta += `${i} anos (Pré-escolar)<br>`
+            }
+            else if (i >= 7 && i < 11) {
+                resposta += `${i} anos (Segunda Infância)<br>`
+            }
+            else if (i >= 11 && i < 19) {
+                resposta += `${i} anos (Adolescência)<br>`
+            }
+            else if (i >= 19 && i < 51) {
+                resposta += `${i} anos (Adulto)<br>`
+            }
+            else if (i >= 51 && i < 101) {
+                resposta += `${i} anos (Melhor Idade)<br>`
+            }
+            else {
+                resposta += `${i} anos (Matusalém)<br>`
+            }
+
+        }
+            mensagem.innerHTML = resposta
+    }
+
+</script>

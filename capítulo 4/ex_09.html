@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+
+<body>
+    <h1>Tabuada Colorida</h1>
+    Escolha uma tabuada:
+    <select name="tabuada" id="tabuada_select">
+        <option value="2">Tabuda do 2</option>
+        <option value="3">Tabuda do 3</option>
+        <option value="4">Tabuda do 4</option>
+        <option value="5">Tabuda do 5</option>
+        <option value="6">Tabuda do 6</option>
+        <option value="7">Tabuda do 7</option>
+        <option value="8">Tabuda do 8</option>
+        <option value="9">Tabuda do 9</option>
+    </select><br><br>
+    o valor que aparece na cor <span style="color: blue">azul</span> é par! <br>
+    o valor que aparece na cor <span style="color: red">vermelho</span> é impar! <br><br>
+    Até que número a tabuada será costruída?<br>
+    <input type="text" id="valor_input"><br><br>
+    <button onclick="analisar()">Calcular:</button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        let contador = 0;
+        let valor_tabuada = Number(tabuada_select.value);
+        let valor_inserido = Number(valor_input.value);
+        let resposta = ``
+
+        while (contador <= valor_inserido) {
+            if(contador % 2 === 0){
+             resposta += `<span style="color: blue">${valor_tabuada}x${contador} = ${contador * valor_tabuada}<br></span>`
+            }
+            else{
+            resposta += `<span style="color: red">${valor_tabuada}x${contador} = ${contador * valor_tabuada}<br></span>`
+            }
+            contador++
+        }
+        mensagem.innerHTML = resposta
+    }
+</script>

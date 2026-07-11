@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+<body>
+    De quantos em quantos dias você faz musculação?
+    <input type="text" id="tempo_input"><br><br>
+    <button onclick="exibir()">Exibir rotina mensal</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function exibir(){
+        let tempo = Number(tempo_input.value);
+        mensagem.innerHTML = ``
+        for (let i = 1; i <= 30; i++) {
+            if((i - 1) % tempo == 0){
+                mensagem.innerHTML += ` Dia ${i} - Musculação<br>`
+            }
+            else{
+                mensagem.innerHTML += ` Dia ${i} - Comer, dormir etc<br>`
+            }
+        }
+    }
+</script>

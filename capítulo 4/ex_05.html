@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    Digite um número de 0 a 200:
+    <input type="text" id="numero_input"><br><br>
+    <button onclick="multiplos()">Viva o 7</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+     function multiplos(){
+        let numero_digitado = Number(numero_input.value);
+        if(numero_digitado < 0 || numero_digitado > 200){
+            alert("Digite um número de 0 a 200!")
+        }
+        else{
+        mensagem.innerHTML = ``
+        for (let i = 0; i <= numero_digitado; i++) {
+            if(i % 7 == 0){
+                mensagem.innerHTML += `${i}<br>`
+            }
+        }
+        }
+      
+    }
+</script>

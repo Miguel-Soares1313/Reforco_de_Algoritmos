@@ -1,0 +1,43 @@
+v<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    Em qual número vai começar?
+    <input type="text" id="inicio_input"><br><br>
+    Em qual número vai terminar?
+    <input type="text" id="final_input"><br><br>
+    <button onclick="analisar()">Curto 3 e 5!</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let inicio = Number(inicio_input.value);
+        let final = Number(final_input.value);
+        mensagem.innerHTML = ``
+        if(final < inicio){
+            alert(`O final não pode ser menor que o começo!`)
+        }
+        else{
+            for (let i = inicio; i <= final; i++) {
+            if(i % 3 == 0 && i % 5 == 0){
+                mensagem.innerHTML += `${i}(É TRI!É PENTA!)<br>`
+            }
+            else if(i % 3 == 0){
+                mensagem.innerHTML += `${i}(É TRI!)<br>`
+            }
+            else if(i % 5 == 0){
+                mensagem.innerHTML += `${i}(É PENTA!)<br>`
+            }
+            else{
+                mensagem.innerHTML += `${i}<br>`
+            }
+
+        }
+        }
+       
+    }
+</script>

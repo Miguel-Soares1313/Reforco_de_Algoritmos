@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    Quantos elefantes você quer contar?
+    <input type="text" id="quantidade_input"><br><br>
+    <button onclick="atazanar()">Atazanar a médium</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function atazanar(){
+        let quantidade = Number(quantidade_input.value);
+        let frase = "incomodam, ";
+        mensagem.innerHTML = ``
+
+        if(quantidade == 1){
+            mensagem.innerHTML = `1 elefante incomoda muita gente!<br>`
+        }
+        for (let i = 2; i <= quantidade; i++) {
+            mensagem.innerHTML += `1 elefante incomoda muita gente!<br>`
+            frase += "incomodam, "
+            mensagem.innerHTML += `${i} elefantes ${frase} muito mais!<br>`
+        }
+    }
+</script>

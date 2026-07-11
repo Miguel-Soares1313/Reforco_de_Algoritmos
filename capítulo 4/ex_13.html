@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    Quantas xícaras de café com leite você já tomou?
+    <input type="text" id="quantidade_input"><br><br>
+    <button onclick="calcular()">Ver a quantidade</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        let quantidade_leite = Number(quantidade_input.value);
+        let quantidade_cafe = Number(quantidade_input.value * 2);
+        mensagem.innerHTML = ``
+        for (let i = 0; i < quantidade_cafe; i++) {
+            mensagem.innerHTML += `<img src = "https://imgs.search.brave.com/KWnTsgqOoAv7nnvapNmcyvMPEnJP5iqRbB6MeHmZVzA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9wby1kZS1jYWZl/LWVtLXVtYS1jb2xo/ZXItaXNvbGFkby1u/by1mdW5kby1icmFu/Y29fMjUzOTg0LTQ5/NzguanBnP3NlbXQ9/YWlzX2h5YnJpZCZ3/PTc0MCZxPTgw" width="60">`; 
+        }
+        for (let i = 0; i < quantidade_leite; i++) {
+            mensagem.innerHTML += `<img src = "https://imgs.search.brave.com/tUCNgsZ5q3qfXdKCiWfGIx_63iX8cvWNEjZ_dhwPljw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjIw/NjM1OTkwMC9wdC9m/b3RvL3NveS1taWxr/LWFuZC1zb3ktcG93/ZGVyLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1VejZ6c0Nj/c0gtMkxBY1kyWUNE/TmZlM0N3UkNLRXpX/NWRJQmg4dGxrSUlR/PQ" width="60">`
+            
+        }
+    }
+</script>

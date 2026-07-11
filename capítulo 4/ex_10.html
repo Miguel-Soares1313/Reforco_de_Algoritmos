@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    Quantas pessoas vão entrar no carro?
+    <input type="text" id="quantidade_input"><br><br>
+    <button onclick="iniciar()">#Partiu Carona</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function iniciar(){
+        let quantidade = Number(quantidade_input.value);
+
+        for (let i = 1; i <= quantidade; i++) {
+            if(i == 1){
+                mensagem.innerHTML += `Entrou o ${i}º passageiro (que é o(a) motorista)<br>`
+            }
+            if(i > 5){
+                mensagem.innerHTML += `O ${i}º passageiro terá que esperar!<br>`
+            }
+            else{
+                mensagem.innerHTML += `Entrou o ${i}º passageiro <br>`
+            }
+            
+        }
+    }
+</script>
