@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    Qual o nome do aluno?
+    <input type="text" id="nome_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar Aluno</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    let lista = [];
+
+     function cadastrar() {
+        let nome = nome_input.value;
+        lista.push(nome)
+        console.log(lista)
+        mensagem.innerHTML = ``
+        let ultimo_indice = (lista.length - 1)
+        for (let i = ultimo_indice; i >= 0; i--) {
+            mensagem.innerHTML += `${lista[i]}<br>`
+        }
+    }
+</script>

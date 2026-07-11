@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    Digite o nome de uma fruta:
+    <input type="text" id="nome_input"><br><br>
+    <button onclick="pesquisar()">Pesquisar</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+
+    let frutas = ["banana", "maça", "uva", "laranja", "limão", "tomate", "kiwi", "manga"];
+
+    function pesquisar() {
+        
+        let nome = nome_input.value;
+        let encontrou = false;
+
+        for (let i = 0; i < frutas.length; i++) {
+            if (nome == frutas[i]) {
+                encontrou = true;
+            }
+        }
+        if(encontrou){
+            mensagem.innerHTML = `A fruta ${nome} existe na lista`
+        }
+        else{
+            mensagem.innerHTML = `Não existe a fruta ${nome} na lista.`
+        }
+    }
+    
+</script>

@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    Qual bairro você já morou?
+    <input type="text" id="bairro_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar bairro</button><br><br>
+    Digite um número:
+    <input type="text" id="numero_bairro_input"><br><br>
+    <button onclick="relembrar()">Relembrar moradia</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    let lista = [];
+
+    function cadastrar() {
+        let bairro = bairro_input.value;
+        lista.push(bairro)
+        console.log(lista)
+    }
+
+    function relembrar() {
+        let numero = Number(numero_bairro_input.value);
+        mensagem.innerHTML = ``
+        if (numero > lista.length) {
+            mensagem.innerHTML = `Você ainda não morou num ${numero}º bairro!`
+        }
+        else {
+            for (let i = 0; i < lista.length; i++) {
+                mensagem.innerHTML = `${lista[numero - 1]}`
+            }
+        }
+
+    }
+</script>
