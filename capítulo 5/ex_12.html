@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+
+<body>
+    Qual o nome do seu filho?
+    <input type="text" id="nome_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="atualizar()">Atualizar Família</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    let filhos = [];
+
+    function cadastrar() {
+        let nome = nome_input.value;
+        let encontrou = false;
+        for (let i = 0; i < filhos.length; i++) {
+            if (nome == filhos[i]) {
+                encontrou = true;
+            }
+        }
+        if (encontrou) {
+            alert("Não pode mais de um filho com o mesmo nome!")
+        }
+        else {
+            filhos.push(nome);
+
+        }
+    }
+
+    function atualizar() {
+        mensagem.innerHTML = `Você tem ${filhos.length} filhos<br>
+        Seu custo mensal será aproximadamente:
+        R$${filhos.length * 3000} se colocá-los em escola particular ou 
+        R$${filhos.length * 1500} se eles estudarem em escola pública 
+`
+    }
+</script>

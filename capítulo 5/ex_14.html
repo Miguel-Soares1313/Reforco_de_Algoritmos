@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+
+<body>
+    Digite um número qualquer:
+    <input type="text" id="numero_input"><br><br>
+    <button onclick="analisar()">Analisar Histórico</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    let lista = [];
+    function analisar() {
+        mensagem.innerHTML = ``
+        let numero = Number(numero_input.value);
+        lista.push(numero)
+        let maior_numero = lista[0];
+        let menor_numero = lista[0];
+        console.log(lista)
+
+        for (let i = 0; i < lista.length; i++) {
+
+            if (lista[i] > maior_numero) {
+                maior_numero = lista[i]
+            }
+            if (lista[i] < menor_numero) {
+                menor_numero = lista[i]
+            }
+            mensagem.innerHTML += `${i + 1}º - Número: ${lista[i]}<br><br>`
+        }
+        mensagem.innerHTML += `Maior: ${maior_numero}<br>
+            Menor: ${menor_numero}`
+
+    }
+</script>

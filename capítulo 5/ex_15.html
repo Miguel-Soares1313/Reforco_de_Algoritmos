@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+<body>
+    Digite o nome do produto:
+    <input type="text" id="nome_input"><br><br>
+    Digite o preço do produto:
+    <input type="text" id="preco_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="relatorio()">Relatório de estoque</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    let nomes = [];
+    let precos = [];
+    function cadastrar(){
+        let nome = nome_input.value;
+        let preco = Number(preco_input.value);
+        nomes.push(nome)
+        precos.push(preco)
+    }
+    function relatorio(){
+        mensagem.innerHTML = ``
+        mensagem.innerHTML += `Total de produtos: ${nomes.length}<br><br>`
+        for (let i = 0; i < nomes.length; i++) {
+            mensagem.innerHTML += `Produto ${i + 1}: ${nomes[i]}<br>
+                                    Preço de compra: R$${precos[i]} .Vender por R$${(precos[i] * 1.25).toFixed(2)}<br><br>`
+            
+        }
+    }
+</script>

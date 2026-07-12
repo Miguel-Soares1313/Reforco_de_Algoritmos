@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+
+<body>
+    Indique o resultado:
+    <select name="" id="placar_select">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select><br><br>
+    Indique qual jogo deseja saber o resultado:
+    <input type="text" id="busca_input" oninput="buscar()"><br><br>
+    <button onclick="registrar()">Registrar jogo</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    let resultados = [];
+
+
+    function registrar() {
+        let resultado = placar_select.value
+
+        let vitorias = 0;
+        let empates = 0;
+        let derrotas = 0;
+        let total = 0;
+
+        resultados.push(resultado)
+        console.log(resultados);
+
+        for (let i = 0; i < resultados.length; i++) {
+            if (resultados[i] == "vitoria") {
+                vitorias++
+                total += 3;
+            }
+            else if (resultados[i] == "empate") {
+                empates++
+                total += 1;
+            }
+            else {
+                derrotas++
+            }
+        }
+        mensagem.innerHTML = `O time teve: ${vitorias} Vitórias, ${empates} Empates, ${derrotas} Derrotas<br>
+            Pontuação total: ${total} Pontos<br>
+            Aproveitamento: ${((total / (resultados.length * 3)) * 100).toFixed(2)}%`
+
+    }
+
+    function buscar() {
+        let numero = Number(busca_input.value);
+        mensagem.innerHTML = ``
+        if (numero > resultados.length || numero < 1) {
+            mensagem.innerHTML += `Não foi cadastrado um ${numero}º jogo<br>`
+        }
+        else {
+
+            if (resultados[numero - 1] == "vitoria") {
+                mensagem.innerHTML += `No ${numero}º jogo o time Ganhou<br>`
+            }
+            else if (resultados[numero - 1] == "empate") {
+                mensagem.innerHTML += `No ${numero}º jogo o time Empatou<br>`
+            }
+            else {
+                mensagem.innerHTML += `No ${numero}º jogo o time Perdeu<br>`
+            }
+
+        }
+
+    }
+</script>

@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    Qual o preço do produto?
+    <input type="text" id="valor_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="atualizar()">Atualizar Estoque</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    let lista = [];
+    
+    function cadastrar(){
+        
+        let valor = Number(valor_input.value);
+        lista.push(valor)
+        console.log(lista)
+    }
+    function atualizar(){
+        let ultimo_indice = (lista.length - 1)
+        mensagem.innerHTML = ``
+        let total = 0;
+        for (let i = ultimo_indice; i >= 0; i--) {
+            total += lista[i];
+            mensagem.innerHTML += `${i + 1}º - Produto: ${lista[i]}<br>`
+        }
+
+        mensagem.innerHTML += `Você tem ${lista.length} produtos cadastrados em estoque<br>
+        Seu estoque vale R$${total}`
+    }
+</script>

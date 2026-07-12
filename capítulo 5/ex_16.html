@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+</head>
+<body>
+    Digite o nome do produto:
+    <input type="text" id="nome_input"><br><br>
+    Digite o preço do produto:
+    <input type="text" id="preco_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="relatorio()">Relatório de estoque</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    let nomes = [];
+    let precos = [];
+    function cadastrar(){
+        let nome = nome_input.value;
+        let preco = Number(preco_input.value);
+        nomes.push(nome)
+        precos.push(preco)
+    }
+    function relatorio(){
+        let total = 0;
+        let maior_valor = precos[0];
+        let maior_nome = nomes[0];
+        let menor_valor = precos[0];
+        let menor_nome = nomes[0];
+        mensagem.innerHTML = ``
+        mensagem.innerHTML += `Total de produtos: ${nomes.length}<br><br>`
+        for (let i = 0; i < nomes.length; i++) {
+            total += precos[i]
+             if (precos[i] > maior_valor) {
+                maior_valor = precos[i];
+                maior_nome = nomes[i];
+            }
+            if (precos[i] < menor_valor) {
+                menor_valor = precos[i];
+                menor_nome = nomes[i];
+            }
+            mensagem.innerHTML += `Produto ${i + 1}: ${nomes[i]}<br>
+            Preço de compra: R$${precos[i]} .Vender por R$${(precos[i] * 1.25).toFixed(2)}<br><br>`    
+        }
+
+        mensagem.innerHTML += `O produto mais caro é: ${maior_nome}<br>
+        O produto mais barato é: ${menor_nome}<br>
+        A soma dos preços de compra é: R$${total}<br>
+        A média do preço de venda dos produtos é: ${(total  * 1.25 / nomes.length).toFixed(2)}`
+
+    }
+</script>
