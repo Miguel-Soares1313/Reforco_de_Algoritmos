@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <button onclick="jogar()">Jogar</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    function jogar() {
+        let jogador_um = Number(Math.floor(Math.random() * 3));
+        let jogador_dois = Number(Math.floor(Math.random() * 3));
+
+        let pedra = `<img src="https://imgs.search.brave.com/Sx96y-XEZBlTq-IuAJ_Nb8jOG9F2YgqBew8QOxsi_sY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLXZlY3Rvci8y/MDIzMTAxOS9vdXJt/aWQvcG5ndHJlZS1j/bG9zZS11cC1vZi1i/aWctc3RvbmUtaXNv/bGF0ZWQtYmlnLXJv/Y2stcG5nLWltYWdl/XzEwMjExMzQ3LnBu/Zw" width="50">`
+        let papel = `<img src="https://imgs.search.brave.com/oNSDYdwJE-jhd3B-wRHX36ox51o-_cvWMrom_Vg-O8o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/Y3JlYXRlLnZpc3Rh/LmNvbS9hcGkvbWVk/aWEvc21hbGwvMzI0/NjQ0MTA2L3N0b2Nr/LXBob3RvLXRvcC12/aWV3LWVtcHR5LWNy/dW1wbGVkLWNyYWZ0/LXBhcGVyLXdoaXRl/LWJhY2tncm91bmQ" width="50">`
+        let tesoura = `<img src="https://imgs.search.brave.com/X0uGAHNkoST582JVYtu41KmEqPg7_Y-GkbzdBonjfac/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ5/OTE5MDI4NS9wdC9m/b3RvL3RhaWxvcnMt/c2Npc3NvcnMtd2l0/aC1hLWJsYWNrLWhh/bmRsZS1pc29sYXRl/ZC1vbi1hLXdoaXRl/LWJhY2tncm91bmQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXN6OWozZkVNYVVi/TVBVT21ZQ1F5anBM/R0swd2N2SVB3ZGQw/NEw5QUN1bkE9" width="50">`
+
+        if (jogador_um == jogador_dois) {
+            mensagem.innerHTML = `EMPATE! Jogue novamente!`
+        }
+        else if (jogador_um == 0 && jogador_dois == 1) {
+            mensagem.innerHTML = `Jogador 1: -- Jogador 2:<br>
+            ${pedra} - X - ${papel}<br>
+            Vitória do jogador 2! Pois Papel cobre a pedra`
+        }
+        else if (jogador_um == 0 && jogador_dois == 2) {
+            mensagem.innerHTML = `Jogador 1: -- Jogador 2:<br>
+            ${pedra} - X - ${tesoura}<br>
+            Vitória do jogador 1! Pois Pedra quebra a tesoura`
+        }
+        else if (jogador_um == 1 && jogador_dois == 2) {
+            mensagem.innerHTML = `Jogador 1: -- Jogador 2:<br>
+            ${papel} - X - ${tesoura}<br>
+            Vitória do jogador 2! Pois Tesoura corta o papel`
+        }
+        else if (jogador_um == 1 && jogador_dois == 0) {
+            mensagem.innerHTML = `Jogador 1: -- Jogador 2:<br>
+            ${papel} - X - ${pedra}<br>
+            Vitória do jogador 1! Pois Papel cobre a pedra`
+        }
+        else if (jogador_um == 2 && jogador_dois == 0) {
+            mensagem.innerHTML = `Jogador 1: -- Jogador 2:<br>
+            ${tesoura} - X - ${pedra}<br>
+            Vitória do jogador 2! Pois Pedra quebra a tesoura`
+        }
+        else{
+            mensagem.innerHTML = `Jogador 1: -- Jogador 2:<br>
+            ${tesoura} - X - ${papel}<br>
+            Vitória do jogador 1! Pois Tesoura corta o papel`
+        }
+    }
+</script>

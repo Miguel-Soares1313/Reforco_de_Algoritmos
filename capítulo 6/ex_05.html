@@ -1,0 +1,142 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    Digite o nome dos participantes:
+    <input type="text" id="nome_input"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    Digite a distância da prova ( entre 5 e 42km! )
+    <input type="text" id="tempo_input"><br><br>
+    <button onclick="iniciar()">Dar a largada</button><br><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    let corredores = [];
+    let tempo_corredores = [0, 0, 0, 0, 0];
+    let tempo_voltas = [];
+
+    function cadastrar() {
+        let nome = nome_input.value;
+        if (nome == "") {
+            alert("Insira um nome válido!")
+        }
+        else {
+            corredores.push(nome)
+            tempo_voltas.push([])
+            console.log(corredores)
+        }
+
+    }
+
+    function iniciar() {
+        let limite = Number(tempo_input.value);
+        tempo_corredores = [0, 0, 0, 0, 0];
+        tempo_voltas = [[], [], [], [], []];
+
+        if (limite < 5 || limite > 42 || corredores.length != 5) {
+            alert("A distância deve estar entre 5 e 42km! OU Digite o nome de 5 corredores apenas!")
+        }
+        else {
+
+            for (let i = 0; i < limite; i++) {
+
+                for (let j = 0; j < corredores.length; j++) {
+                    let tempo = Number((Math.random() * (6 - 4) + 4).toFixed(1));
+                    tempo_voltas[j].push(tempo);
+                    tempo_corredores[j] += tempo;
+                }
+
+                let menor_tempo = tempo_corredores[0];
+                let menor_indice = 0;
+
+                for (let j = 0; j < corredores.length; j++) {
+                    if (tempo_corredores[j] < menor_tempo) {
+                        menor_tempo = tempo_corredores[j];
+                        menor_indice = j;
+
+
+                    }
+                }
+                if (i == limite - 1) {
+                    let copia_tempos = [...tempo_corredores];
+
+                    let menor1 = copia_tempos[0];
+                    let indice1 = 0;
+                    for (let i = 0; i < copia_tempos.length; i++) {
+                        if (copia_tempos[i] < menor1) {
+                            menor1 = copia_tempos[i];
+                            indice1 = i;
+                        }
+                    }
+
+                    copia_tempos[indice1] = Infinity;
+                    let menor2 = copia_tempos[0];
+                    let indice2 = 0;
+                    for (let i = 0; i < copia_tempos.length; i++) {
+                        if (copia_tempos[i] < menor2) {
+                            menor2 = copia_tempos[i];
+                            indice2 = i;
+                        }
+                    }
+
+                    copia_tempos[indice2] = Infinity;
+                    let menor3 = copia_tempos[0];
+                    let indice3 = 0;
+                    for (let i = 0; i < copia_tempos.length; i++) {
+                        if (copia_tempos[i] < menor3) {
+                            menor3 = copia_tempos[i];
+                            indice3 = i;
+                        }
+                    }
+
+                    mensagem.innerHTML = `O 1º lugar foi ${corredores[indice1]} com ${menor1} min<br>
+                                          O 2º lugar foi ${corredores[indice2]} com ${menor2} min<br>
+                                          O 3º lugar foi ${corredores[indice3]} com ${menor3} min<br><br>`
+                }
+                else {
+                    alert(`No ${i + 1}º km, ${corredores[menor_indice]} está liderando com ${menor_tempo} minutos.`)
+                }
+
+
+            }
+
+            let melhor_corredor = corredores[0];   
+            let melhor_volta = tempo_voltas[0][0];
+            let melhor_km = 1;
+
+            let pior_corredor = corredores[0];
+            let pior_volta = tempo_voltas[0][0];
+            let pior_km = 1;
+
+            for (let j = 0; j < corredores.length; j++) {
+                let ultimo_indice = tempo_voltas[j].length - 1;
+                let tempo_acumulado = tempo_corredores[j];
+                for (let i = ultimo_indice; i >= 0; i--) {
+                    mensagem.innerHTML += `Corredor ${j + 1}: ${corredores[j]}, Tempo de volta: ${tempo_voltas[j][i]}, Tempo total: ${tempo_acumulado}<br><br>`
+                    tempo_acumulado -= tempo_voltas[j][i];
+
+                    if(melhor_volta > tempo_voltas[j][i]){
+                        melhor_volta = tempo_voltas[j][i];
+                        melhor_corredor = corredores[j]
+                        melhor_km = i + 1;
+                    }
+                    if(pior_volta < tempo_voltas[j][i]){
+                        pior_volta = tempo_voltas[j][i];
+                        pior_corredor = corredores[j]
+                        pior_km = i + 1;
+                    }
+                }
+            }
+            mensagem.innerHTML += ` Melhor: ${melhor_corredor} - ${melhor_volta} - ${melhor_km}<br>`
+            mensagem.innerHTML += ` Pior: ${pior_corredor} -${pior_volta} - ${pior_km}`
+        }
+    }
+
+</script>
